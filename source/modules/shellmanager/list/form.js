@@ -207,12 +207,12 @@ class Form {
             { type: 'label', label: LANG['list']['add']['form']['encoder'] },
             { type: 'radio', name: `encoder_${c}`, value: 'default', label: 'default', checked: true }
           ];
-          if (c !== 'custom') {
-            _.push({
-              type: 'radio', name: `encoder_${c}`, value: 'random',
-              label: 'random', checked: _encoder === 'random'
-            });
-          }
+          // if (c !== 'custom') {
+          //   _.push({
+          //     type: 'radio', name: `encoder_${c}`, value: 'random',
+          //     label: 'random', checked: _encoder === 'random'
+          //   });
+          // }
           encoders.map((e) => {
             _.push({
               type: 'radio', name: `encoder_${c}`,

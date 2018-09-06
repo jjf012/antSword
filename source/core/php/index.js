@@ -35,7 +35,7 @@ class PHP extends Base {
    * @return {array} 编码器列表
    */
   get encoders() {
-    return ["base64", "chr", "chr16", "rot13"];
+    return ["base64", "hex"];
   }
 
   /**
